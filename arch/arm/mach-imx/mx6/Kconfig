@@ -466,6 +466,15 @@ config TARGET_MX6ULL_14X14_EVK
 	select DM_THERMAL
 	imply CMD_DM
 
+config TARGET_MX6ULL_14X14_AURE_EMMC
+	bool "Support mx6ull_14x14_aure_emmc"
+	depends on MX6ULL
+	select BOARD_LATE_INIT
+	select DM
+	select DM_SERIAL
+	select DM_THERMAL
+	imply CMD_DM
+
 config TARGET_MX6ULZ_SMM_M2
 	bool "Support imx6ulz_smm_m2"
 	depends on MX6ULL
@@ -707,6 +716,7 @@ source "board/freescale/mx6sxsabresd/Kconfig"
 source "board/freescale/mx6sxsabreauto/Kconfig"
 source "board/freescale/mx6ul_14x14_evk/Kconfig"
 source "board/freescale/mx6ullevk/Kconfig"
+source "board/freescale/mx6ull_aure_emmc/Kconfig"
 source "board/bosch/acc/Kconfig"
 source "board/grinn/liteboard/Kconfig"
 source "board/phytec/pcm058/Kconfig"

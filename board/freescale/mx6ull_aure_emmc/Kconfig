@@ -1,0 +1,15 @@
+if TARGET_MX6ULL_14X14_AURE_EMMC
+
+config SYS_BOARD
+	default "mx6ull_aure_emmc"
+
+config SYS_VENDOR
+	default "freescale"
+
+config SYS_CONFIG_NAME
+	default "mx6ull_aure_emmc"
+
+config IMX_CONFIG
+	default "board/freescale/mx6ull_aure_emmc/imximage.cfg"
+
+endif
