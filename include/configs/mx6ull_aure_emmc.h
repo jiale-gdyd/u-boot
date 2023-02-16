@@ -35,7 +35,7 @@
 	"boot_fdt=try\0" \
 	"ip_dyn=yes\0" \
 	"panel=ATK-LCD-4.3-800x480\0" \
-	"videomode=video=ctfb:x:800,y:480,depth:24,pclk:35500,le:210,ri:46,up:22,lo:23,hs:20,vs:3,sync:0,vmode:0\0" \
+	"videomode=video=ctfb:x:800,y:480,depth:24,pclk:33000,le:40,ri:88,up:13,lo:32,hs:48,vs:3,sync:0,vmode:0\0" \
 	"mmcdev="__stringify(CONFIG_SYS_MMC_ENV_DEV)"\0" \
 	"mmcpart=1\0" \
 	"mmcroot=/dev/mmcblk1p2 rootwait rw\0" \
