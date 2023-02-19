@@ -49,12 +49,35 @@ function imx6ull_uboot()
         error_exit "构建uboot失败"
     fi
 
+    if [ -f "${CUR_DIR}/u-boot-dtb.imx" ]; then
+        cp -rf ${CUR_DIR}/u-boot-dtb.imx ${CUR_DIR}/u-boot-imx6ull-14x14-ddr512-emmc.imx
+    fi
+
+    if [ -f "${CUR_DIR}/u-boot-dtb.bin" ]; then
+        cp -rf ${CUR_DIR}/u-boot-dtb.bin ${CUR_DIR}/u-boot-imx6ull-14x14-ddr512-emmc.bin
+    fi
+
     print_info "uboot构建完成"
+}
+
+function copy()
+{
+    if [ -f "${CUR_DIR}/u-boot-imx6ull-14x14-ddr512-emmc.imx" ]; then
+        cp -rf ${CUR_DIR}/u-boot-imx6ull-14x14-ddr512-emmc.imx /mnt/f/winshare/aure_imx_mfgtool/Profiles/Linux/OS\ Firmware/files/boot/
+    fi
 }
 
 function clean()
 {
     make ARCH=arm CROSS_COMPILE=${IMX6ULL_CROSS_COMPILE} distclean
+
+    if [ -f "${CUR_DIR}/u-boot-imx6ull-14x14-ddr512-emmc.imx" ]; then
+        rm -rf ${CUR_DIR}/u-boot-imx6ull-14x14-ddr512-emmc.imx
+    fi
+
+    if [ -f "${CUR_DIR}/u-boot-imx6ull-14x14-ddr512-emmc.bin" ]; then
+        rm -rf ${CUR_DIR}/u-boot-imx6ull-14x14-ddr512-emmc.bin
+    fi
 }
 
 function help()
@@ -65,6 +88,7 @@ function help()
     echo "[OPTION]:"
     echo "============================================"
     echo "  -  clean          清理构建的工程"
+    echo "  -  copy           拷贝文件到烧录工具"
     echo "  -  imx6ull_uboot  开始构建imx6ull uboot目标"
     echo "============================================"
 }

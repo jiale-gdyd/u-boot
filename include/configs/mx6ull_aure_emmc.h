@@ -34,7 +34,7 @@
 	"fdt_addr=0x83000000\0" \
 	"boot_fdt=try\0" \
 	"ip_dyn=yes\0" \
-	"panel=ATK-LCD-4.3-800x480\0" \
+	"panel=ATK-RGBLCD-4.3-800x480\0" \
 	"videomode=video=ctfb:x:800,y:480,depth:24,pclk:33000,le:40,ri:88,up:13,lo:32,hs:48,vs:3,sync:0,vmode:0\0" \
 	"mmcdev="__stringify(CONFIG_SYS_MMC_ENV_DEV)"\0" \
 	"mmcpart=1\0" \
@@ -117,7 +117,7 @@
 #define CONFIG_FEC_ENET_DEV		1
 #endif
 
-#define CONFIG_IPADDR       192.168.1.102
+#define CONFIG_IPADDR       192.168.1.100
 #define CONFIG_GATEWAYIP    192.168.1.1
 #define CONFIG_NETMASK      255.255.255.0
 
