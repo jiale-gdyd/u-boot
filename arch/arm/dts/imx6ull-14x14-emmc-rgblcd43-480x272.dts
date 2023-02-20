@@ -7,11 +7,11 @@
 #include "imx6ull-14x14-aure-emmc.dtsi"
 
 / {
-	model = "Freescale i.MX6 UltraLiteLite 14x14 DDR-512MB EMMC-8GiB RGB-LCD 4.3inch 800x480 Board";
+	model = "Freescale i.MX6 UltraLiteLite 14x14 DDR-512MB EMMC-8GiB RGB-LCD 4.3inch 480x272 Board";
 	compatible = "fsl,imx6ull-14x14-evk", "fsl,imx6ull";
 
 	panel {
-		compatible = "alientek,4.3inch_rgblcd_800x480";
+		compatible = "alientek,4.3inch_rgblcd_480x272";
 		backlight = <&backlight_display>;
 
 		port {
@@ -52,14 +52,14 @@
 			native-mode = <&timing0>;
 
 			timing0: timing0 {
-				clock-frequency = <33000000>;
-				hactive = <800>;
-				vactive = <480>;
-				hfront-porch = <40>;
-				hback-porch = <88>;
-				hsync-len = <48>;
-				vback-porch = <32>;
-				vfront-porch = <13>;
+				clock-frequency = <9000000>;
+				hactive = <480>;
+				vactive = <272>;
+				hfront-porch = <5>;
+				hback-porch = <40>;
+				hsync-len = <20>;
+				vback-porch = <8>;
+				vfront-porch = <8>;
 				vsync-len = <3>;
 				hsync-active = <0>;
 				vsync-active = <0>;
